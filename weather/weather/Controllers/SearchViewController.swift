@@ -1,5 +1,5 @@
 //
-//  WeatherForcastViewController.swift
+//  SearchViewController.swift
 //  weather
 //
 //  Created by Anil Kallamkatil Balakrishnan on 13/06/2020.
@@ -8,14 +8,12 @@
 
 import UIKit
 
-class WeatherForcastViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        WeatherService.shared.searchLocationByName(searchText: "oslo")
-        WeatherService.shared.getWeatherForcast(locationId: "1-72837")
     }
     
 
