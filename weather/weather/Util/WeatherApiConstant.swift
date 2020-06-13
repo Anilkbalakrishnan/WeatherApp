@@ -10,5 +10,8 @@ import Foundation
 
 
 struct WeatherApiConstant {
-    static let baseUrl: String = "https://apitest.vipps.no"
+    static let baseUrl: String = "https://www.yr.no/"
+    static let searchPath: String = "api/v0/locations/Search?"
+    static let forcastPathPrefix: String = "api/v0/locations/"
+    static let forcastPathSuffix: String = "/forecast"
 }

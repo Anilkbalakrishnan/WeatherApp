@@ -39,7 +39,7 @@ struct Location: Decodable {
 
     enum CodingKeys: String, CodingKey {
         case category, id, name, position, elevation, timeZone, urlPath, country, region, subregion
-        case links
+        case links = "_links"
     }
 }
 
@@ -56,7 +56,7 @@ struct LocationLinks: Decodable {
     let airqualityforecast, pollen, bathingtemperatures: Reference
 
     enum CodingKeys: String, CodingKey {
-        case linksSelf
+        case linksSelf = "self"
         case celestialevents, forecast, mapfeature, notifications, extremeforecasts, now, observations, airqualityforecast, pollen, bathingtemperatures
     }
 }

@@ -25,7 +25,7 @@ struct WeatherForcastResponse: Decodable {
 struct Link: Decodable {
     let linksSelf: Reference
     enum CodingKeys: String, CodingKey {
-        case linksSelf
+        case linksSelf = "self"
     }
 }
 
@@ -62,17 +62,18 @@ struct Precipitation: Decodable {
 struct Symbol: Decodable {
     let sunup: Bool
     let n, clouds, precip: Int
-    let symbolVar: Var
+    let symbolVar: String?
 
     enum CodingKeys: String, CodingKey {
         case sunup, n, clouds, precip
-        case symbolVar
+        case symbolVar = "var"
     }
 }
 
 enum Var: String, Decodable {
     case moon = "Moon"
     case sun = "Sun"
+    
 }
 
 // MARK: - Wind
