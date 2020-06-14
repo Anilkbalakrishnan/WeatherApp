@@ -18,22 +18,22 @@ protocol WeatherServiceForcastDataDelegate: AnyObject {
     func onWeatherForcastFetchDidFiled()
 }
 
-protocol WeatherServiceSearchInterface: AnyObject, WeatherServiceBase {
+protocol WeatherServiceSearchInterface: AnyObject {
     func searchLocationByName(searchText: String)
-}
-
-protocol WeatherServiceForcastInterface: AnyObject, WeatherServiceBase {
-    func getWeatherForcast(locationId: String)
-}
-
-protocol WeatherServiceBase: AnyObject {
     func setDataDelegate(delegate: WeatherServiceSearchDataDelegate)
 }
+
+protocol WeatherServiceForcastInterface: AnyObject {
+    func getWeatherForcast(locationId: String)
+    func setDataDelegate(delegate: WeatherServiceForcastDataDelegate)
+}
+
 //MARK:- WeatherService
 class WeatherService: WeatherServiceSearchInterface {
     static let shared = WeatherService()
     
-    weak private var delegate: WeatherServiceSearchDataDelegate?
+    weak private var searchDataDelegate: WeatherServiceSearchDataDelegate?
+    weak private var forcastDataDelegate: WeatherServiceForcastDataDelegate?
     let baseUrl: String = WeatherApiConstant.baseUrl
     
     
@@ -43,10 +43,10 @@ class WeatherService: WeatherServiceSearchInterface {
             switch result {
             case .success(let searchData):
                 if let searchResponse: SearchLocationResponse = searchData.decodeJSON(){
-                    self.delegate?.onSearchLocationFetchDidSucceed(searchLocationResponse: searchResponse)
+                    self.searchDataDelegate?.onSearchLocationFetchDidSucceed(searchLocationResponse: searchResponse)
                 }
             case .failure(let error):
-                 self.delegate?.onSearchLocationFethcDidFailed()
+                 self.searchDataDelegate?.onSearchLocationFethcDidFailed()
             }
         });
     }
@@ -57,16 +57,20 @@ class WeatherService: WeatherServiceSearchInterface {
             switch result {
             case .success(let weatherForcastData):
                 if let forcastResponse: WeatherForcastResponse = weatherForcastData.decodeJSON(){
-                    self.delegate?.onWeatherForcastFetchDidSucceed(weatherForcastResponse: forcastResponse)
+                    self.forcastDataDelegate?.onWeatherForcastFetchDidSucceed(weatherForcastResponse: forcastResponse)
                  }
             case .failure(let error):
-                self.delegate?.onSearchLocationFethcDidFailed()
+                self.searchDataDelegate?.onSearchLocationFethcDidFailed()
             }
         });
     }
     
     func setDataDelegate(delegate: WeatherServiceSearchDataDelegate) {
-        self.delegate = delegate
+        self.searchDataDelegate = delegate
+    }
+    
+    func setDataDelegate(delegate: WeatherServiceForcastDataDelegate) {
+        self.forcastDataDelegate = delegate
     }
 }
 
