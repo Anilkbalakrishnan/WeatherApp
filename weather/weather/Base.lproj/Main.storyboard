@@ -22,18 +22,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oslo" translatesAutoresizingMaskIntoConstraints="NO" id="mHV-ac-wC1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTj-pY-yxB">
-                                <rect key="frame" x="8" y="116" width="398" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="3bf-F3-9bo"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhB-wN-DQH">
                                 <rect key="frame" x="342" y="52" width="48" height="48"/>
                                 <subviews>
@@ -63,14 +51,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Forcast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-5C-kvq">
-                                <rect key="frame" x="32" y="248" width="350" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="vdB-qa-ljg">
-                                <rect key="frame" x="0.0" y="308" width="414" height="588"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -200,7 +182,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="oLf-OZ-bKx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="4zG-Q6-CWS"/>
-                            <constraint firstItem="Tdc-5C-kvq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="67l-Yx-ld8"/>
                             <constraint firstItem="vdB-qa-ljg" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="6Aq-a2-610"/>
                             <constraint firstItem="mHV-ac-wC1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8AO-Gg-5ex"/>
                             <constraint firstItem="mHV-ac-wC1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bnr-Ad-6eE"/>
@@ -210,23 +191,19 @@
                             <constraint firstItem="QBd-Io-bFw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OQv-RC-ChG"/>
                             <constraint firstItem="vdB-qa-ljg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R4P-mI-EWz"/>
                             <constraint firstItem="QBd-Io-bFw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SiC-BT-Gy8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tdc-5C-kvq" secondAttribute="trailing" constant="32" id="X9W-Ev-u7b"/>
+                            <constraint firstItem="vdB-qa-ljg" firstAttribute="top" secondItem="oLf-OZ-bKx" secondAttribute="bottom" constant="24" id="Ubp-IT-Zcq"/>
                             <constraint firstItem="QBd-Io-bFw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZKh-Yg-lD3"/>
-                            <constraint firstItem="GTj-pY-yxB" firstAttribute="top" secondItem="vhB-wN-DQH" secondAttribute="bottom" constant="16" id="bGs-nP-3id"/>
                             <constraint firstItem="oLf-OZ-bKx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="bqn-xl-4ei"/>
                             <constraint firstItem="vhB-wN-DQH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="c1g-6g-i5V"/>
-                            <constraint firstItem="GTj-pY-yxB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="dp9-8l-jFv"/>
-                            <constraint firstItem="vdB-qa-ljg" firstAttribute="top" secondItem="Tdc-5C-kvq" secondAttribute="bottom" constant="24" id="iWM-4J-pcX"/>
                             <constraint firstAttribute="bottom" secondItem="QBd-Io-bFw" secondAttribute="bottom" id="jbV-tY-ip5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vdB-qa-ljg" secondAttribute="trailing" id="nB5-8f-jUb"/>
-                            <constraint firstItem="Tdc-5C-kvq" firstAttribute="top" secondItem="GTj-pY-yxB" secondAttribute="bottom" constant="32" id="nEi-RS-Jyz"/>
                             <constraint firstAttribute="bottom" secondItem="mHV-ac-wC1" secondAttribute="bottom" id="pYR-CI-rrF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GTj-pY-yxB" secondAttribute="trailing" constant="8" id="seq-aI-7zh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="forcastTableView" destination="vdB-qa-ljg" id="znn-Ek-5MO"/>
+                        <outlet property="locationLabel" destination="oLf-OZ-bKx" id="DCX-JU-ewD"/>
                         <outlet property="searchIconView" destination="vhB-wN-DQH" id="Aio-7L-jSy"/>
                         <segue destination="Xpn-Qr-Ane" kind="show" identifier="segueToSearch" id="O9a-aV-nUT"/>
                     </connections>

@@ -10,19 +10,59 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoTileView" customModule="weather" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="81" height="90"/>
+            <rect key="frame" x="0.0" y="0.0" width="164" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbC-mq-x9S">
-                    <rect key="frame" x="0.0" y="-3" width="142" height="93"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbC-mq-x9S">
+                    <rect key="frame" x="0.0" y="0.0" width="164" height="80"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_wind" translatesAutoresizingMaskIntoConstraints="NO" id="2qf-Ux-Mml">
+                            <rect key="frame" x="24" y="33" width="24" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxa-bR-CBL">
+                            <rect key="frame" x="56" y="15" width="24" height="48"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xra-5A-Gj0">
+                            <rect key="frame" x="111" y="9" width="24" height="48"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlW-el-dXl">
+                                    <rect key="frame" x="-1" y="15" width="26" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="26" id="5lx-ID-Gkx"/>
+                                        <constraint firstAttribute="height" constant="18" id="Stq-9N-fND"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="QlW-el-dXl" secondAttribute="bottom" id="JPH-6v-2nM"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lbC-mq-x9S" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6O1-Ma-wiE"/>
+                <constraint firstAttribute="top" secondItem="lbC-mq-x9S" secondAttribute="top" id="k6Z-ji-gIc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lbC-mq-x9S" secondAttribute="trailing" id="laN-Ud-zul"/>
+                <constraint firstAttribute="bottom" secondItem="lbC-mq-x9S" secondAttribute="bottom" id="xhC-3a-mMp"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="128.2608695652174" y="-97.767857142857139"/>
+            <point key="canvasLocation" x="155.07246376811597" y="-67.633928571428569"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_wind" width="24" height="24"/>
+    </resources>
 </document>
