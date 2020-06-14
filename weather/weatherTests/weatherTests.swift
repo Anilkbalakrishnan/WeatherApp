@@ -11,6 +11,7 @@ import XCTest
 
 class weatherTests: XCTestCase {
 
+   
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -22,6 +23,33 @@ class weatherTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testNightIconNames(){
+        let symbol1 = Symbol(sunup: false, n: 1, clouds: 2, precip: 3, symbolVar: "Moon")
+        XCTAssertEqual(symbol1.getIconName, "01n")
+        let symbol2 = Symbol(sunup: false, n: 2, clouds: 2, precip: 3, symbolVar: "Moon")
+        XCTAssertEqual(symbol2.getIconName, "02n")
+        let symbol3 = Symbol(sunup: false, n: 10, clouds: 2, precip: 3, symbolVar: "Moon")
+        XCTAssertEqual(symbol3.getIconName, "10n")
+    }
+    
+    func testMidDayIconNames(){
+        let symbol1 = Symbol(sunup: false, n: 1, clouds: 2, precip: 3, symbolVar: "Sun")
+        XCTAssertEqual(symbol1.getIconName, "01d")
+        let symbol2 = Symbol(sunup: false, n: 2, clouds: 2, precip: 3, symbolVar: "Sun")
+        XCTAssertEqual(symbol2.getIconName, "02d")
+        let symbol3 = Symbol(sunup: false, n: 10, clouds: 2, precip: 3, symbolVar: "Sun")
+        XCTAssertEqual(symbol3.getIconName, "10d")
+    }
+    
+    func testIconWithoutVarNames(){
+        let symbol1 = Symbol(sunup: false, n: 1, clouds: 2, precip: 3, symbolVar: nil)
+        XCTAssertEqual(symbol1.getIconName, "01d")
+        let symbol2 = Symbol(sunup: false, n: 2, clouds: 2, precip: 3, symbolVar: nil)
+        XCTAssertEqual(symbol2.getIconName, "02d")
+        let symbol3 = Symbol(sunup: false, n: 10, clouds: 2, precip: 3, symbolVar: nil)
+        XCTAssertEqual(symbol3.getIconName, "10d")
     }
 
     func testPerformanceExample() {
