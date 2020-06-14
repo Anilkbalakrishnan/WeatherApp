@@ -51,6 +51,11 @@ class weatherTests: XCTestCase {
         let symbol3 = Symbol(sunup: false, n: 10, clouds: 2, precip: 3, symbolVar: nil)
         XCTAssertEqual(symbol3.getIconName, "10")
     }
+    
+    func testTemperatureFormatString(){
+        let temperature: Float = 23
+        XCTAssertEqual(temperature.toTemperateString, "23°")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
