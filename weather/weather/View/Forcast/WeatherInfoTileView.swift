@@ -20,15 +20,15 @@ class WeatherInfoTileView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.WeatherInfoTileView()
+        self.initWeatherInfoTileView()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.WeatherInfoTileView()
+        self.initWeatherInfoTileView()
     }
     
-    private func WeatherInfoTileView(){
+    private func initWeatherInfoTileView(){
         Bundle.main.loadNibNamed("WeatherInfoTileView", owner: self, options: nil)
         addSubview(self.contentView)
         self.contentView.frame = self.bounds
