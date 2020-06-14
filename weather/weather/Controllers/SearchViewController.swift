@@ -72,6 +72,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedLocation = self.dataSource[indexPath.row]
         self.delegate?.onLocationSelected(location: selectedLocation)
+        self.dismissView()
     }
 }
 
