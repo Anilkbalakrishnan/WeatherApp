@@ -39,6 +39,8 @@
 		0433D2A7249634F2005E2A9C /* ForcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0433D2A5249634F2005E2A9C /* ForcastTableViewCell.xib */; };
 		0433D2AA2496350B005E2A9C /* ForcastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D2A82496350B005E2A9C /* ForcastCollectionViewCell.swift */; };
 		0433D2AB2496350B005E2A9C /* ForcastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0433D2A92496350B005E2A9C /* ForcastCollectionViewCell.xib */; };
+		0433D2AD249656DC005E2A9C /* ForcastSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0433D2AC249656DC005E2A9C /* ForcastSectionHeaderView.xib */; };
+		0433D2AF24965714005E2A9C /* ForcastSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D2AE24965713005E2A9C /* ForcastSectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		0433D2A5249634F2005E2A9C /* ForcastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForcastTableViewCell.xib; sourceTree = "<group>"; };
 		0433D2A82496350B005E2A9C /* ForcastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcastCollectionViewCell.swift; sourceTree = "<group>"; };
 		0433D2A92496350B005E2A9C /* ForcastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForcastCollectionViewCell.xib; sourceTree = "<group>"; };
+		0433D2AC249656DC005E2A9C /* ForcastSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForcastSectionHeaderView.xib; sourceTree = "<group>"; };
+		0433D2AE24965713005E2A9C /* ForcastSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcastSectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +288,8 @@
 				0433D2A5249634F2005E2A9C /* ForcastTableViewCell.xib */,
 				0433D2A82496350B005E2A9C /* ForcastCollectionViewCell.swift */,
 				0433D2A92496350B005E2A9C /* ForcastCollectionViewCell.xib */,
+				0433D2AC249656DC005E2A9C /* ForcastSectionHeaderView.xib */,
+				0433D2AE24965713005E2A9C /* ForcastSectionHeaderView.swift */,
 			);
 			path = Forcast;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0433D2AD249656DC005E2A9C /* ForcastSectionHeaderView.xib in Resources */,
 				0433D24624941624005E2A9C /* LaunchScreen.storyboard in Resources */,
 				0433D24324941624005E2A9C /* Assets.xcassets in Resources */,
 				0433D28E2495712B005E2A9C /* PlaceView.xib in Resources */,
@@ -435,6 +442,7 @@
 				0433D23A24941621005E2A9C /* AppDelegate.swift in Sources */,
 				0433D26F2494EA8C005E2A9C /* NetworkManager.swift in Sources */,
 				0433D2762494FD94005E2A9C /* WeatherForcastResponse.swift in Sources */,
+				0433D2AF24965714005E2A9C /* ForcastSectionHeaderView.swift in Sources */,
 				0433D2742494FA24005E2A9C /* SearchLocationResponse.swift in Sources */,
 				0433D26B2494DE0A005E2A9C /* WeatherForcastViewController.swift in Sources */,
 				0433D29624961309005E2A9C /* WeatherForcastPresenter.swift in Sources */,
