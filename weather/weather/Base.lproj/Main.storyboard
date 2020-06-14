@@ -69,9 +69,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vdB-qa-ljg">
-                                <rect key="frame" x="8" y="308" width="398" height="588"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vdB-qa-ljg">
+                                <rect key="frame" x="0.0" y="308" width="414" height="588"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TRx-YM-HXb">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TRx-YM-HXb" id="IYI-LB-IbC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -85,7 +95,7 @@
                             <constraint firstItem="mHV-ac-wC1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mgi-wc-PWi"/>
                             <constraint firstItem="vhB-wN-DQH" firstAttribute="leading" secondItem="oLf-OZ-bKx" secondAttribute="trailing" constant="8" id="Nk7-lI-xFw"/>
                             <constraint firstItem="QBd-Io-bFw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OQv-RC-ChG"/>
-                            <constraint firstItem="vdB-qa-ljg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="R4P-mI-EWz"/>
+                            <constraint firstItem="vdB-qa-ljg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R4P-mI-EWz"/>
                             <constraint firstItem="QBd-Io-bFw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SiC-BT-Gy8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tdc-5C-kvq" secondAttribute="trailing" constant="32" id="X9W-Ev-u7b"/>
                             <constraint firstItem="QBd-Io-bFw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZKh-Yg-lD3"/>
@@ -95,7 +105,7 @@
                             <constraint firstItem="GTj-pY-yxB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="dp9-8l-jFv"/>
                             <constraint firstItem="vdB-qa-ljg" firstAttribute="top" secondItem="Tdc-5C-kvq" secondAttribute="bottom" constant="24" id="iWM-4J-pcX"/>
                             <constraint firstAttribute="bottom" secondItem="QBd-Io-bFw" secondAttribute="bottom" id="jbV-tY-ip5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vdB-qa-ljg" secondAttribute="trailing" constant="8" id="nB5-8f-jUb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vdB-qa-ljg" secondAttribute="trailing" id="nB5-8f-jUb"/>
                             <constraint firstItem="Tdc-5C-kvq" firstAttribute="top" secondItem="GTj-pY-yxB" secondAttribute="bottom" constant="32" id="nEi-RS-Jyz"/>
                             <constraint firstAttribute="bottom" secondItem="mHV-ac-wC1" secondAttribute="bottom" id="pYR-CI-rrF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GTj-pY-yxB" secondAttribute="trailing" constant="8" id="seq-aI-7zh"/>
