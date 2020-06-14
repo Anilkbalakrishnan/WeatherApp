@@ -72,7 +72,7 @@ extension Symbol {
             iconName = iconName + "d"
 //TODO:- Need to find what is the value for Polar night and add a case insetead of in deafult
         default:
-            iconName + "m"
+            break
         }
         return iconName
     }

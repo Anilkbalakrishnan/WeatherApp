@@ -45,11 +45,11 @@ class weatherTests: XCTestCase {
     
     func testIconWithoutVarNames(){
         let symbol1 = Symbol(sunup: false, n: 1, clouds: 2, precip: 3, symbolVar: nil)
-        XCTAssertEqual(symbol1.getIconName, "01d")
+        XCTAssertEqual(symbol1.getIconName, "01")
         let symbol2 = Symbol(sunup: false, n: 2, clouds: 2, precip: 3, symbolVar: nil)
-        XCTAssertEqual(symbol2.getIconName, "02d")
+        XCTAssertEqual(symbol2.getIconName, "02")
         let symbol3 = Symbol(sunup: false, n: 10, clouds: 2, precip: 3, symbolVar: nil)
-        XCTAssertEqual(symbol3.getIconName, "10d")
+        XCTAssertEqual(symbol3.getIconName, "10")
     }
 
     func testPerformanceExample() {
