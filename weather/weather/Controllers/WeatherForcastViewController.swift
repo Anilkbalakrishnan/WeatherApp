@@ -13,10 +13,11 @@ protocol SearchDataDelegate: AnyObject {
 
 class WeatherForcastViewController: UIViewController {
     
-    @IBOutlet weak var searchImageView: UIImageView!
+    @IBOutlet weak var searchIconView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initComponents()
         
         
     }
@@ -25,7 +26,7 @@ class WeatherForcastViewController: UIViewController {
 //MARK:- Initialize components
 extension WeatherForcastViewController {
     fileprivate func initComponents() {
-        self.searchImageView.addTapGesture(target: self, action: #selector(onSearchTap))
+        self.searchIconView.addTapGesture(target: self, action: #selector(onSearchTap))
     }
 }
 

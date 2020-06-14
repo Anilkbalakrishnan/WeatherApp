@@ -1,5 +1,5 @@
 //
-//  ImageViewExtension.swift
+//  UIViewExtension.swift
 //  weather
 //
 //  Created by Anil Kallamkatil Balakrishnan on 13/06/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIImageView {
+extension UIView {
     func addTapGesture(target: Any, action: Selector) {
         self.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: target, action: action)
