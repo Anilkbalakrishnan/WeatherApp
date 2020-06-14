@@ -54,6 +54,7 @@ extension WeatherForcastViewController {
     }
 }
 
+//MARK:- Location search delegate
 extension WeatherForcastViewController: SearchDataDelegate {
     func onLocationSelected(location: PlaceViewModel) {
         
