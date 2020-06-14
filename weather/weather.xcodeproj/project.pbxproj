@@ -23,6 +23,14 @@
 		0433D27B249503EE005E2A9C /* WeatherApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D27A249503EE005E2A9C /* WeatherApiConstant.swift */; };
 		0433D27D24951144005E2A9C /* JsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D27C24951144005E2A9C /* JsonUtil.swift */; };
 		0433D27F24952EE5005E2A9C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D27E24952EE4005E2A9C /* SearchViewController.swift */; };
+		0433D282249530FE005E2A9C /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D281249530FE005E2A9C /* ImageViewExtension.swift */; };
+		0433D284249539B2005E2A9C /* SearchLocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D283249539B2005E2A9C /* SearchLocationPresenter.swift */; };
+		0433D28924954818005E2A9C /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D28824954818005E2A9C /* PlaceViewModel.swift */; };
+		0433D28B24955EB9005E2A9C /* WeatherApiModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D28A24955EB9005E2A9C /* WeatherApiModelExtension.swift */; };
+		0433D28E2495712B005E2A9C /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0433D28D2495712B005E2A9C /* PlaceView.xib */; };
+		0433D2902495716A005E2A9C /* PlacView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D28F24957169005E2A9C /* PlacView.swift */; };
+		0433D29224958721005E2A9C /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D29124958721005E2A9C /* PlacesTableViewCell.swift */; };
+		0433D294249588F4005E2A9C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D293249588F4005E2A9C /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +73,14 @@
 		0433D27A249503EE005E2A9C /* WeatherApiConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiConstant.swift; sourceTree = "<group>"; };
 		0433D27C24951144005E2A9C /* JsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtil.swift; sourceTree = "<group>"; };
 		0433D27E24952EE4005E2A9C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0433D281249530FE005E2A9C /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		0433D283249539B2005E2A9C /* SearchLocationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationPresenter.swift; sourceTree = "<group>"; };
+		0433D28824954818005E2A9C /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
+		0433D28A24955EB9005E2A9C /* WeatherApiModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiModelExtension.swift; sourceTree = "<group>"; };
+		0433D28D2495712B005E2A9C /* PlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceView.xib; sourceTree = "<group>"; };
+		0433D28F24957169005E2A9C /* PlacView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacView.swift; sourceTree = "<group>"; };
+		0433D29124958721005E2A9C /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
+		0433D293249588F4005E2A9C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +131,7 @@
 		0433D23824941621005E2A9C /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				0433D28C24957075005E2A9C /* View */,
 				0433D28024952F45005E2A9C /* Extension */,
 				0433D2772495009C005E2A9C /* Service */,
 				0433D2712494F9DC005E2A9C /* Models */,
@@ -155,6 +172,7 @@
 			children = (
 				0433D26A2494DE0A005E2A9C /* WeatherForcastViewController.swift */,
 				0433D27E24952EE4005E2A9C /* SearchViewController.swift */,
+				0433D283249539B2005E2A9C /* SearchLocationPresenter.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +190,7 @@
 		0433D2702494EC1F005E2A9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0433D293249588F4005E2A9C /* AppConstants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -179,6 +198,7 @@
 		0433D2712494F9DC005E2A9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0433D285249547B5005E2A9C /* ViewModels */,
 				0433D2722494F9E3005E2A9C /* ApiModels */,
 			);
 			path = Models;
@@ -204,8 +224,28 @@
 		0433D28024952F45005E2A9C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0433D281249530FE005E2A9C /* ImageViewExtension.swift */,
+				0433D28A24955EB9005E2A9C /* WeatherApiModelExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		0433D285249547B5005E2A9C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0433D28824954818005E2A9C /* PlaceViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0433D28C24957075005E2A9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0433D28D2495712B005E2A9C /* PlaceView.xib */,
+				0433D28F24957169005E2A9C /* PlacView.swift */,
+				0433D29124958721005E2A9C /* PlacesTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +354,7 @@
 			files = (
 				0433D24624941624005E2A9C /* LaunchScreen.storyboard in Resources */,
 				0433D24324941624005E2A9C /* Assets.xcassets in Resources */,
+				0433D28E2495712B005E2A9C /* PlaceView.xib in Resources */,
 				0433D24124941621005E2A9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,16 +380,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0433D28B24955EB9005E2A9C /* WeatherApiModelExtension.swift in Sources */,
+				0433D294249588F4005E2A9C /* AppConstants.swift in Sources */,
 				0433D279249500B4005E2A9C /* WeatherService.swift in Sources */,
 				0433D27F24952EE5005E2A9C /* SearchViewController.swift in Sources */,
 				0433D27B249503EE005E2A9C /* WeatherApiConstant.swift in Sources */,
+				0433D2902495716A005E2A9C /* PlacView.swift in Sources */,
 				0433D23E24941621005E2A9C /* ViewController.swift in Sources */,
 				0433D23A24941621005E2A9C /* AppDelegate.swift in Sources */,
 				0433D26F2494EA8C005E2A9C /* NetworkManager.swift in Sources */,
 				0433D2762494FD94005E2A9C /* WeatherForcastResponse.swift in Sources */,
 				0433D2742494FA24005E2A9C /* SearchLocationResponse.swift in Sources */,
 				0433D26B2494DE0A005E2A9C /* WeatherForcastViewController.swift in Sources */,
+				0433D284249539B2005E2A9C /* SearchLocationPresenter.swift in Sources */,
+				0433D28924954818005E2A9C /* PlaceViewModel.swift in Sources */,
+				0433D29224958721005E2A9C /* PlacesTableViewCell.swift in Sources */,
 				0433D23C24941621005E2A9C /* SceneDelegate.swift in Sources */,
+				0433D282249530FE005E2A9C /* ImageViewExtension.swift in Sources */,
 				0433D27D24951144005E2A9C /* JsonUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +573,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGX7HYTHFT;
 				INFOPLIST_FILE = weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,6 +592,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGX7HYTHFT;
 				INFOPLIST_FILE = weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

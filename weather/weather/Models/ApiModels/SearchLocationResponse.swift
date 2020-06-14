@@ -32,10 +32,10 @@ struct Location: Decodable {
     let id, name: String
     let position: Position
     let elevation: Int
-    let timeZone: TimeZone
+    let timeZone: String
     let urlPath: String
-    let country, region, subregion: Category
-    let links: LocationLinks
+    let country, region, subregion: Category?
+    let links: LocationLinks?
 
     enum CodingKeys: String, CodingKey {
         case category, id, name, position, elevation, timeZone, urlPath, country, region, subregion
@@ -50,14 +50,15 @@ struct Category: Decodable {
 
 // MARK: - LocationLinks
 struct LocationLinks: Decodable {
-    let linksSelf, celestialevents, forecast, mapfeature: Reference
-    let notifications, extremeforecasts, now: Reference
-    let observations: [Reference]
-    let airqualityforecast, pollen, bathingtemperatures: Reference
+    let linksSelf, celestialevents, forecast, mapfeature: Reference?
+    let notifications: Reference?
+    let extremeforecasts, now: Reference?
+//    let observations: [Reference]?
+    let airqualityforecast, pollen, bathingtemperatures: Reference?
 
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
-        case celestialevents, forecast, mapfeature, notifications, extremeforecasts, now, observations, airqualityforecast, pollen, bathingtemperatures
+        case celestialevents, forecast, mapfeature, notifications, extremeforecasts, now, airqualityforecast, pollen, bathingtemperatures
     }
 }
 

@@ -12,7 +12,8 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     func HttpDataRequest(url: String, httpMethod: HttpMethod, data jsonBody: Data?, completionHandler: @escaping(Result<Data, NetworkError>) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)
+        guard let nsurl = NSURL(string: url) as URL? else { return }
+        let request: NSMutableURLRequest = NSMutableURLRequest(url:nsurl)
         request.httpMethod = httpMethod.rawValue
         if let jsonRequest = jsonBody {
             request.httpBody = jsonRequest

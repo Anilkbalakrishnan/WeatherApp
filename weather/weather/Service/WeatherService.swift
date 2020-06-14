@@ -8,9 +8,25 @@
 
 import Foundation
 
-class WeatherService {
+protocol WeatherServiceDataDelegate: AnyObject {
+    func onSearchLocationFetchDidSucceed(searchLocationResponse: SearchLocationResponse)
+    func onSearchLocationFethcDidFailed()
+    func onWeatherForcastFetchDidSucceed(weatherForcastResponse: WeatherForcastResponse)
+    func onWeatherForcastFetchDidFiled()
+}
+
+protocol WeatherServiceInterface {
+    func searchLocationByName(searchText: String)
+    func getWeatherForcast(locationId: String)
+    func setDataDelegate(delegate: WeatherServiceDataDelegate)
+}
+
+class WeatherService: WeatherServiceInterface {
     static let shared = WeatherService()
+    
+    weak private var delegate: WeatherServiceDataDelegate?
     let baseUrl: String = WeatherApiConstant.baseUrl
+    
     
     func searchLocationByName(searchText: String){
         let searchUrl = getSearchApiUrl(searchQuery: SearchQuery(searchText: searchText))
@@ -18,11 +34,10 @@ class WeatherService {
             switch result {
             case .success(let searchData):
                 if let searchResponse: SearchLocationResponse = searchData.decodeJSON(){
-                    
+                    self.delegate?.onSearchLocationFetchDidSucceed(searchLocationResponse: searchResponse)
                 }
             case .failure(let error):
-                break
-                
+                 self.delegate?.onSearchLocationFethcDidFailed()
             }
         });
     }
@@ -33,12 +48,16 @@ class WeatherService {
             switch result {
             case .success(let weatherForcastData):
                 if let forcastResponse: WeatherForcastResponse = weatherForcastData.decodeJSON(){
-                    
+                    self.delegate?.onWeatherForcastFetchDidSucceed(weatherForcastResponse: forcastResponse)
                  }
             case .failure(let error):
-                break
+                self.delegate?.onSearchLocationFethcDidFailed()
             }
         });
+    }
+    
+    func setDataDelegate(delegate: WeatherServiceDataDelegate) {
+        self.delegate = delegate
     }
 }
 
