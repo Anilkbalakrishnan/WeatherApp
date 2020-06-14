@@ -32,6 +32,7 @@ class WeatherForcastViewController: UIViewController {
         super.viewDidLoad()
         self.initComponents()
         self.forcastPresenter.setViewDelegate(viewDelegate: self)
+        self.forcastPresenter.getForcastForLocation(locationId: "1-72837")
     }
     
 }
@@ -83,6 +84,7 @@ extension WeatherForcastViewController: SearchDataDelegate {
 }
 
 
+//MARK:- Table view data source and delegate handler
 extension WeatherForcastViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -111,11 +113,6 @@ extension WeatherForcastViewController: UITableViewDataSource, UITableViewDelega
             return headerSection
         }
         return UIView()
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
