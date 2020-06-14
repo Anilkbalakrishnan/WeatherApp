@@ -35,6 +35,10 @@ class WeatherForcastViewController: UIViewController {
         self.forcastPresenter.getForcastForLocation(locationId: "1-72837")
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
 
 //MARK:- Initialize components
