@@ -76,6 +76,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
+//MARK:- SerchView manipulation
+extension SearchViewController {
+    fileprivate func dismissView(){
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 //MARK:- Searchbar delegate
 extension SearchViewController: UISearchBarDelegate {
     
@@ -88,7 +95,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        dismiss(animated: true, completion: nil)
+        self.dismissView()
     }
     
     private func searchLocation(searchText: String) {

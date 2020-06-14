@@ -18,8 +18,6 @@ class WeatherForcastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initComponents()
-        
-        
     }
 }
 

@@ -27,5 +27,4 @@ class PlacesTableViewCell: UITableViewCell {
         self.placeView.initWithData(dataSource: datasource)
     }
     
-    
 }
