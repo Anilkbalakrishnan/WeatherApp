@@ -8,13 +8,12 @@
 
 import Foundation
 
-
 class SearchLocationPresenter {
     
-    private let weatherService: WeatherServiceInterface
+    private let weatherService: WeatherServiceSearchInterface
     weak private var viewDelegate: SearchViewControllerDelegate?
     
-    init(weatherService: WeatherServiceInterface){
+    init(weatherService: WeatherServiceSearchInterface){
         self.weatherService = weatherService
         self.weatherService.setDataDelegate(delegate: self)
     }
@@ -27,32 +26,20 @@ class SearchLocationPresenter {
         if !name.isEmpty {
             self.weatherService.searchLocationByName(searchText: name)
         }
-        
     }
 }
 
 //MARK:- Weather service Data delegate
-extension SearchLocationPresenter: WeatherServiceDataDelegate {
+extension SearchLocationPresenter: WeatherServiceSearchDataDelegate {
     
     func onSearchLocationFetchDidSucceed(searchLocationResponse: SearchLocationResponse) {
         let places = searchLocationResponse.embedded.location.map { $0.toPlacViewModel}
         DispatchQueue.main.async {
             self.viewDelegate?.onSearchDataFetchDidSucceed(places: places)
         }
-        
     }
     
     func onSearchLocationFethcDidFailed() {
         
     }
-    
-    func onWeatherForcastFetchDidSucceed(weatherForcastResponse: WeatherForcastResponse) {
-        
-    }
-    
-    func onWeatherForcastFetchDidFiled() {
-        
-    }
-    
-    
 }

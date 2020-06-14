@@ -7,24 +7,33 @@
 //
 
 import Foundation
-
-protocol WeatherServiceDataDelegate: AnyObject {
+//MARK:- Protocol and Delegate
+protocol WeatherServiceSearchDataDelegate: AnyObject {
     func onSearchLocationFetchDidSucceed(searchLocationResponse: SearchLocationResponse)
     func onSearchLocationFethcDidFailed()
+}
+
+protocol WeatherServiceForcastDataDelegate: AnyObject {
     func onWeatherForcastFetchDidSucceed(weatherForcastResponse: WeatherForcastResponse)
     func onWeatherForcastFetchDidFiled()
 }
 
-protocol WeatherServiceInterface {
+protocol WeatherServiceSearchInterface: AnyObject, WeatherServiceBase {
     func searchLocationByName(searchText: String)
-    func getWeatherForcast(locationId: String)
-    func setDataDelegate(delegate: WeatherServiceDataDelegate)
 }
 
-class WeatherService: WeatherServiceInterface {
+protocol WeatherServiceForcastInterface: AnyObject, WeatherServiceBase {
+    func getWeatherForcast(locationId: String)
+}
+
+protocol WeatherServiceBase: AnyObject {
+    func setDataDelegate(delegate: WeatherServiceSearchDataDelegate)
+}
+//MARK:- WeatherService
+class WeatherService: WeatherServiceSearchInterface {
     static let shared = WeatherService()
     
-    weak private var delegate: WeatherServiceDataDelegate?
+    weak private var delegate: WeatherServiceSearchDataDelegate?
     let baseUrl: String = WeatherApiConstant.baseUrl
     
     
@@ -56,7 +65,7 @@ class WeatherService: WeatherServiceInterface {
         });
     }
     
-    func setDataDelegate(delegate: WeatherServiceDataDelegate) {
+    func setDataDelegate(delegate: WeatherServiceSearchDataDelegate) {
         self.delegate = delegate
     }
 }
