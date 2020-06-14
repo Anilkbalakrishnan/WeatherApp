@@ -29,7 +29,7 @@ protocol WeatherServiceForcastInterface: AnyObject {
 }
 
 //MARK:- WeatherService
-class WeatherService: WeatherServiceSearchInterface {
+class WeatherService: WeatherServiceSearchInterface, WeatherServiceForcastInterface {
     static let shared = WeatherService()
     
     weak private var searchDataDelegate: WeatherServiceSearchDataDelegate?

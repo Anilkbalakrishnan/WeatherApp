@@ -23,16 +23,36 @@ class WeatherForcastViewController: UIViewController {
     
     @IBOutlet weak var searchIconView: UIView!
     
+    @IBOutlet weak var forcastTableView: UITableView!
+    
+    private var dataSource: WeatherForcastViewModel?
+    private let forcastPresenter = WeatherForcastPresenter(weatherService: WeatherService.shared)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initComponents()
+        self.forcastPresenter.setViewDelegate(viewDelegate: self)
     }
+
 }
 
 //MARK:- Initialize components
 extension WeatherForcastViewController {
+    
     fileprivate func initComponents() {
         self.searchIconView.addTapGesture(target: self, action: #selector(onSearchTap))
+        self.initForcastTableView()
+    }
+    
+    fileprivate func initForcastTableView() {
+        self.registerTableViewCell()
+        self.forcastTableView.delegate = self
+        self.forcastTableView.dataSource = self
+    }
+    
+    fileprivate func registerTableViewCell() {
+        let forcastTableViewCell = UINib(nibName: "ForcastTableViewCell",bundle: nil)
+        self.forcastTableView.register(forcastTableViewCell, forCellReuseIdentifier: ReuseIdentifier.weatherForcastTableViewCell)
     }
 }
 
@@ -57,6 +77,41 @@ extension WeatherForcastViewController {
 //MARK:- Location search delegate
 extension WeatherForcastViewController: SearchDataDelegate {
     func onLocationSelected(location: PlaceViewModel) {
-        
+        self.forcastPresenter.getForcastForLocation(locationId: location.id)
     }
+}
+
+
+extension WeatherForcastViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let dataSource = self.dataSource  else { return 0 }
+        return dataSource.weatherForcast.forcasts.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let dataSource = self.dataSource  else { return UITableViewCell() }
+        
+        if let forcastTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifier.weatherForcastTableViewCell) as? ForcastTableViewCell {
+            forcastTableViewCell.initData(dataSource:dataSource.weatherForcast.forcasts[indexPath.section].weatherPrediction)
+            return forcastTableViewCell
+        }
+        return UITableViewCell()
+    }
+    
+    
+}
+
+
+extension WeatherForcastViewController: WeatherForcastViewControllerDelegate {
+    func onForcastDataFetchDidSucceed(forcastData: WeatherForcastViewModel) {
+        self.dataSource = forcastData
+        self.forcastTableView.reloadData()
+    }
+    
+    
 }

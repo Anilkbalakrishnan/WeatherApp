@@ -9,5 +9,25 @@
 import Foundation
 
 struct WeatherForcastViewModel {
-    
+    let weatherForcast: WeatherForcast
+}
+
+struct WeatherForcast {
+    let forcasts: [Forcast]
+}
+
+struct Forcast {
+    let day: String
+    let date: String
+    let dayWeatherIcon: String
+    let maxTemp: String
+    let minTemp: String
+    let currentTemp: String
+    let weatherPrediction: [WeatherInfo]
+}
+
+struct WeatherInfo {
+    let temperature: String
+    let time: String
+    let iconName: String
 }

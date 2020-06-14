@@ -18,17 +18,28 @@ class WeatherForcastPresenter {
         self.weatherService.setDataDelegate(delegate: self)
     }
     
+    func setViewDelegate(viewDelegate: WeatherForcastViewControllerDelegate){
+        self.viewDelegate = viewDelegate
+    }
+    
+    func getForcastForLocation(locationId: String){
+        self.weatherService.getWeatherForcast(locationId: locationId)
+    }
+    
+    
 }
 
 //MARK:- Weather Forcast data delegeate
 extension WeatherForcastPresenter: WeatherServiceForcastDataDelegate {
     
     func onWeatherForcastFetchDidSucceed(weatherForcastResponse: WeatherForcastResponse) {
-        
+        DispatchQueue.main.async {
+            self.viewDelegate?.onForcastDataFetchDidSucceed(forcastData: weatherForcastResponse.toWeatherForcastViewModel())
+        }
     }
     
     func onWeatherForcastFetchDidFiled() {
         
     }
-
+    
 }
