@@ -36,7 +36,7 @@ class WeatherInfoTileView: UIView {
     }
     
     func initWithData(data: WeatherInfo) {
-        self.temperatureLabel.text = data.temperature
+        self.temperatureLabel.text = data.temperature.toTemperateString
         self.timeLabel.text = data.time
         self.weatherIconImageView.image = UIImage(named: data.iconName)
     }

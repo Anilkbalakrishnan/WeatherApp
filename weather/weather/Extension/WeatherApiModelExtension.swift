@@ -19,18 +19,26 @@ extension WeatherForcastResponse {
         let forcastGroupedByDate = Dictionary(grouping: self.shortIntervals) { $0.start.getDate }
         var forcasts = [Forcast]()
         for (date, intervals) in forcastGroupedByDate {
-            let forcast = Forcast(forcastSummary: ForcastSummary(day: date, date: date, dayWeatherIcon: "02d", maxTemp: "21°", minTemp: "22°", currentTemp: "22°"), weatherPrediction: intervals.map{$0.toWeatherInfo})
-            forcasts.append(forcast)
+            if let formattedDate = date.getFormattedDate {
+                let weatherForcasts = intervals.map{$0.toWeatherInfo}
+                let maxTemperature = weatherForcasts.map{$0.temperature}.max()?.toTemperateString ?? ""
+                 let minTemperature = weatherForcasts.map{$0.temperature}.min()?.toTemperateString ?? ""
+                
+                let forcast = Forcast(date: formattedDate.date, forcastSummary: ForcastSummary(day: formattedDate.day , date: formattedDate.dateString, weatherIcon: "02d", maxTemp: maxTemperature, minTemp: minTemperature , currentTemp: "22°"), weatherPrediction: weatherForcasts)
+                forcasts.append(forcast)
+            }
+            
         }
-        
-        return WeatherForcastViewModel(weatherForcast: WeatherForcast(forcasts: forcasts))
+        return WeatherForcastViewModel(weatherForcast: WeatherForcast(forcasts: forcasts.sorted(by: { (forcast1, forcast2) -> Bool in
+            return forcast1.date < forcast2.date
+        })))
     }
 }
 
 
 extension ShortInterval {
     var toWeatherInfo: WeatherInfo {
-        return WeatherInfo(temperature: String(Int(self.temperature.value ?? 0)) + "°" , time: self.start.getTime, iconName: self.symbol.getIconName)
+        return WeatherInfo(temperature: Float(self.temperature.value ?? 0), time: self.start.getTime, iconName: self.symbol.getIconName)
     }
 }
 
@@ -57,16 +65,55 @@ extension Symbol {
 //MARK:- Date Extesnison
 extension Date {
     var getTime: String {
-        let df = DateFormatter()
-        df.dateFormat = "hh:mm"
-        return df.string(from:self)
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "hh:mm"
+        return dateFormater.string(from:self)
     }
     
     var getDate: String {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd"
-        return df.string(from: self)
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd"
+        return dateFormater.string(from: self)
     }
 }
+
+
+extension String {
+    var getFormattedDate: FormattedDate? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = dateFormatter.date(from: self) else { return nil }
+        dateFormatter.locale = Locale(identifier: "nb")
+        dateFormatter.setLocalizedDateFormatFromTemplate("dMMMM")
+        let formattedDate = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "EEEE"
+        let day = dateFormatter.string(from: date)
+        return FormattedDate(dateString: formattedDate, day: day.capitalizingFirstLetter(), date: date)
+    }
+    
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    var appendDegree: String {
+        return self + "°"
+    }
+    
+}
+
+extension Float {
+    var toTemperateString: String {
+        return String(Int(self)).appendDegree
+    }
+}
+
+struct FormattedDate {
+    let dateString: String
+    let day: String
+    let date: Date
+    
+}
+
+
 
 

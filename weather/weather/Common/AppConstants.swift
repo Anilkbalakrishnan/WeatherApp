@@ -12,4 +12,5 @@ struct ReuseIdentifier {
     static let placeTableViewCell = "placeTableViewCellIdentifier"
     static let weatherInfoCollectionViewCell = "weatherInfoCollectionViewCell"
     static let weatherForcastTableViewCell = "weatherForcastTableViewCell"
+    static let weatherForcastTableViewHeader = "forcastSectionHeader"
 }

@@ -10,7 +10,9 @@ import UIKit
 
 class ForcastSectionHeaderView: UIView {
 
-    @IBOutlet var contentView: UIView!
+    
+    @IBOutlet var contentView: ForcastSectionHeaderView!
+    @IBOutlet weak var dayLabel: UILabel!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -27,6 +29,13 @@ class ForcastSectionHeaderView: UIView {
         addSubview(self.contentView)
         self.contentView.frame = self.bounds
         self.contentView.autoresizingMask = [.flexibleWidth]
+    }
+    
+    
+    
+    
+    func initData(data: ForcastSummary) {
+        self.dayLabel.text = data.day
     }
     
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct WeatherForcastViewModel {
     let weatherForcast: WeatherForcast
@@ -17,12 +18,13 @@ struct WeatherForcast {
 }
 
 struct Forcast {
+    let date: Date
     let forcastSummary: ForcastSummary
     let weatherPrediction: [WeatherInfo]
 }
 
 struct WeatherInfo {
-    let temperature: String
+    let temperature: Float
     let time: String
     let iconName: String
 }
@@ -30,8 +32,18 @@ struct WeatherInfo {
 struct ForcastSummary {
     let day: String
     let date: String
-    let dayWeatherIcon: String
+    let weatherIcon: String
     let maxTemp: String
     let minTemp: String
     let currentTemp: String
+    var weatherIconImage: UIImage? {
+        return UIImage(named: self.weatherIcon)
+    }
+}
+
+
+extension ForcastSummary {
+    var temperatureRange: String {
+        return self.minTemp + "/" + self.maxTemp
+    }
 }

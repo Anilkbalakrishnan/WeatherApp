@@ -86,7 +86,7 @@ struct Wind: Decodable {
 // MARK: - ShortInterval
 struct ShortInterval: Decodable {
     let symbol: Symbol
-    let precipitation: Precipitation
+    let precipitation: Precipitation?
     let temperature: DewPoint
     let wind: Wind
     let feelsLike, pressure, uvIndex: DewPoint

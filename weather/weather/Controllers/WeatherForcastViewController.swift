@@ -33,7 +33,7 @@ class WeatherForcastViewController: UIViewController {
         self.initComponents()
         self.forcastPresenter.setViewDelegate(viewDelegate: self)
     }
-
+    
 }
 
 //MARK:- Initialize components
@@ -54,6 +54,7 @@ extension WeatherForcastViewController {
         let forcastTableViewCell = UINib(nibName: "ForcastTableViewCell",bundle: nil)
         self.forcastTableView.register(forcastTableViewCell, forCellReuseIdentifier: ReuseIdentifier.weatherForcastTableViewCell)
     }
+    
 }
 
 extension WeatherForcastViewController {
@@ -90,7 +91,7 @@ extension WeatherForcastViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,7 +104,23 @@ extension WeatherForcastViewController: UITableViewDataSource, UITableViewDelega
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let dataSource = self.dataSource  else { return UIView() }
+        if let headerSection = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifier.weatherForcastTableViewHeader) as? ForcastHeaderTableViewCell {
+            headerSection.initData(dataSource: dataSource.weatherForcast.forcasts[section].forcastSummary)
+            return headerSection
+        }
+        return UIView()
+        
+    }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
 }
 
 
