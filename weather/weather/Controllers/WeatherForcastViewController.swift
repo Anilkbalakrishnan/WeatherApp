@@ -15,26 +15,18 @@ class WeatherForcastViewController: UIViewController {
     
     @IBOutlet weak var searchImageView: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchImageView.addTapGesture(target: self, action: #selector(onSearchTap))
-        // Do any additional setup after loading the view.
-        WeatherService.shared.searchLocationByName(searchText: "oslo")
-        WeatherService.shared.getWeatherForcast(locationId: "1-72837")
+        
+        
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+}
+
+//MARK:- Initialize components
+extension WeatherForcastViewController {
+    fileprivate func initComponents() {
+        self.searchImageView.addTapGesture(target: self, action: #selector(onSearchTap))
+    }
 }
 
 extension WeatherForcastViewController {
@@ -54,7 +46,6 @@ extension WeatherForcastViewController {
         }
     }
 }
-
 
 extension WeatherForcastViewController: SearchDataDelegate {
     func onLocationSelected(location: PlaceViewModel) {
