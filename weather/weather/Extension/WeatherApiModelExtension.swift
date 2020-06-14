@@ -22,17 +22,35 @@ extension WeatherForcastResponse {
             if let formattedDate = date.getFormattedDate {
                 let weatherForcasts = intervals.map{$0.toWeatherInfo}
                 let maxTemperature = weatherForcasts.map{$0.temperature}.max()?.toTemperateString ?? ""
-                 let minTemperature = weatherForcasts.map{$0.temperature}.min()?.toTemperateString ?? ""
+                let minTemperature = weatherForcasts.map{$0.temperature}.min()?.toTemperateString ?? ""
                 
-                let forcast = Forcast(date: formattedDate.date, forcastSummary: ForcastSummary(day: formattedDate.day , date: formattedDate.dateString, weatherIcon: "02d", maxTemp: maxTemperature, minTemp: minTemperature , currentTemp: "22°"), weatherPrediction: weatherForcasts)
+                let forcast = Forcast(date: formattedDate.date, forcastSummary: ForcastSummary(day: formattedDate.day , date: formattedDate.dateString, weatherIcon: getWeatherIconForTheDay(forcasts: weatherForcasts), maxTemp: maxTemperature, minTemp: minTemperature , currentTemp: "22°"), weatherPrediction: weatherForcasts)
                 forcasts.append(forcast)
             }
-            
         }
         return WeatherForcastViewModel(weatherForcast: WeatherForcast(forcasts: forcasts.sorted(by: { (forcast1, forcast2) -> Bool in
             return forcast1.date < forcast2.date
         })))
     }
+    
+    private func getWeatherIconForTheDay(forcasts: [WeatherInfo]) -> String {
+        let forcastGroupByWeatherIcon = Dictionary(grouping: forcasts) { $0.iconName }
+        var iconOccurances = [IconOccurance]()
+        for( icon, occurances) in forcastGroupByWeatherIcon {
+            iconOccurances.append(IconOccurance(name: icon, count: occurances.count))
+        }
+        
+       let iconsSortedbyOccurance =  iconOccurances.sorted { (occurance1, occurance2) -> Bool in
+            occurance1.count > occurance2.count
+        }
+        return iconsSortedbyOccurance.first?.name ?? "02d"
+    }
+}
+
+
+struct IconOccurance {
+    let name: String
+    let count: Int
 }
 
 
@@ -66,7 +84,7 @@ extension Symbol {
 extension Date {
     var getTime: String {
         let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "hh:mm"
+        dateFormater.dateFormat = "HH:mm"
         return dateFormater.string(from:self)
     }
     
