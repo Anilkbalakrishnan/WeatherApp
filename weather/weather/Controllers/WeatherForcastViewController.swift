@@ -7,10 +7,18 @@
 //
 
 import UIKit
+
+//MARK:- Protocols
 protocol SearchDataDelegate: AnyObject {
     func onLocationSelected(location: PlaceViewModel)
 }
 
+protocol WeatherForcastViewControllerDelegate: AnyObject {
+    func onForcastDataFetchDidSucceed(forcastData: WeatherForcastViewModel)
+}
+
+
+//MARK:- Weather Forcast View Controller
 class WeatherForcastViewController: UIViewController {
     
     @IBOutlet weak var searchIconView: UIView!

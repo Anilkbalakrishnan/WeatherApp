@@ -32,6 +32,7 @@
 		0433D29224958721005E2A9C /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D29124958721005E2A9C /* PlacesTableViewCell.swift */; };
 		0433D294249588F4005E2A9C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D293249588F4005E2A9C /* AppConstants.swift */; };
 		0433D29624961309005E2A9C /* WeatherForcastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D29524961309005E2A9C /* WeatherForcastPresenter.swift */; };
+		0433D29824961AFE005E2A9C /* WeatherForcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433D29724961AFE005E2A9C /* WeatherForcastViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		0433D29124958721005E2A9C /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
 		0433D293249588F4005E2A9C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		0433D29524961309005E2A9C /* WeatherForcastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForcastPresenter.swift; sourceTree = "<group>"; };
+		0433D29724961AFE005E2A9C /* WeatherForcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForcastViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				0433D28824954818005E2A9C /* PlaceViewModel.swift */,
+				0433D29724961AFE005E2A9C /* WeatherForcastViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				0433D26B2494DE0A005E2A9C /* WeatherForcastViewController.swift in Sources */,
 				0433D29624961309005E2A9C /* WeatherForcastPresenter.swift in Sources */,
 				0433D284249539B2005E2A9C /* SearchLocationPresenter.swift in Sources */,
+				0433D29824961AFE005E2A9C /* WeatherForcastViewModel.swift in Sources */,
 				0433D28924954818005E2A9C /* PlaceViewModel.swift in Sources */,
 				0433D29224958721005E2A9C /* PlacesTableViewCell.swift in Sources */,
 				0433D23C24941621005E2A9C /* SceneDelegate.swift in Sources */,

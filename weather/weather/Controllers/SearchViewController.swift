@@ -25,7 +25,6 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         self.initComponents()
     }
-    
 }
 
 
