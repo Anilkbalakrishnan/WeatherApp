@@ -22,8 +22,8 @@ protocol WeatherForcastViewControllerDelegate: AnyObject {
 class WeatherForcastViewController: UIViewController {
     
     @IBOutlet weak var searchIconView: UIView!
-    
     @IBOutlet weak var forcastTableView: UITableView!
+    @IBOutlet weak var locationLabel: UILabel!
     
     private var dataSource: WeatherForcastViewModel?
     private let forcastPresenter = WeatherForcastPresenter(weatherService: WeatherService.shared)
@@ -79,6 +79,7 @@ extension WeatherForcastViewController {
 //MARK:- Location search delegate
 extension WeatherForcastViewController: SearchDataDelegate {
     func onLocationSelected(location: PlaceViewModel) {
+        self.locationLabel.text = location.name
         self.forcastPresenter.getForcastForLocation(locationId: location.id)
     }
 }
