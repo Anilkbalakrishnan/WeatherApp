@@ -135,15 +135,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJB-Q6-K8c">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="nNx-zd-gl1">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                    <searchBar clipsSubviews="YES" contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="nNx-zd-gl1">
+                                        <rect key="frame" x="8" y="44" width="398" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </searchBar>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="nNx-zd-gl1" firstAttribute="leading" secondItem="FJB-Q6-K8c" secondAttribute="leading" symbolic="YES" id="QHU-9f-Hsi"/>
-                                    <constraint firstAttribute="trailing" secondItem="nNx-zd-gl1" secondAttribute="trailing" symbolic="YES" id="ZiD-7I-ori"/>
+                                    <constraint firstItem="nNx-zd-gl1" firstAttribute="leading" secondItem="FJB-Q6-K8c" secondAttribute="leading" constant="8" id="QHU-9f-Hsi"/>
+                                    <constraint firstAttribute="trailing" secondItem="nNx-zd-gl1" secondAttribute="trailing" constant="8" id="ZiD-7I-ori"/>
                                     <constraint firstAttribute="bottom" secondItem="nNx-zd-gl1" secondAttribute="bottom" symbolic="YES" id="ah4-7w-x6d"/>
                                     <constraint firstAttribute="height" constant="100" id="sZu-gI-get"/>
                                 </constraints>
