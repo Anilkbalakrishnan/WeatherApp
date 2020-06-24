@@ -54,7 +54,7 @@ struct DewPoint: Decodable {
 
 // MARK: - Precipitation
 struct Precipitation: Decodable {
-    let min, max, value: Double
+    let min, max, value: Double?
     let pop: Int?
 }
 

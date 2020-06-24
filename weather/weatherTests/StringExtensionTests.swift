@@ -20,7 +20,7 @@ class StringExtensionTests: XCTestCase {
     }
 
     func testTemperatureStringFormatWithDegree() {
-           let temperatureString = "24"
+        let temperatureString = "24"
         XCTAssertEqual(temperatureString.appendDegree , "24°")
         let temperatureinFloat: Float = 25.6
         XCTAssertEqual(temperatureinFloat.toTemperateString, "25°")
