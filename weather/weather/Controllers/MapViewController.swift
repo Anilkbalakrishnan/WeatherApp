@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.mapView.delegate = self
         self.plotPointOnMap()
     }
     
@@ -82,11 +83,37 @@ extension MapViewController: MKMapViewDelegate {
             }
             
             //Customising the annotaitonView
-            // self.customizeMKAnnotationView(annotationView, annotationMapPin)
+             self.customizeMKAnnotationView(annotationView, annotationMapPin)
             
             return annotationView
         }
         
         return annotationView
     }
+    
+    fileprivate func customizeMKAnnotationView(_ annotationView: MKAnnotationView?, _ annotationPin: MapPin) {
+        if let annotationViewToCustomize = annotationView {
+            
+            annotationViewToCustomize.canShowCallout = false
+            annotationViewToCustomize.frame = CGRect(x: 0, y: 0, width: 60 , height: 74)
+            annotationViewToCustomize.centerOffset = (CGPoint(x: 0, y: -37))
+            
+            //Set a custom Image View
+            let imageView :UIImageView = UIImageView()
+            imageView.layer.frame = CGRect(x: 0, y: 0, width: 60, height: 74)
+            if annotationPin.title == "Nathonal Theatre" {
+                imageView.image = UIImage(named: "nationalTheatret_image")
+            }else if annotationPin.title == "Stortinget" {
+                imageView.image = UIImage(named: "stortinget_image")
+            }
+            
+            //Remove all the default subviews in Annotation view and add the Image View
+            annotationViewToCustomize.subviews.forEach { (subView) in
+                subView.removeFromSuperview()
+            }
+            annotationViewToCustomize.addSubview(imageView)
+        }
+    }
+    
+    
 }
