@@ -45,6 +45,8 @@
 		044121992496ADA600C09035 /* InfoTileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044121982496ADA600C09035 /* InfoTileView.xib */; };
 		0441219B2496ADC700C09035 /* InfoTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441219A2496ADC700C09035 /* InfoTileView.swift */; };
 		0441219D2496D28200C09035 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441219C2496D28200C09035 /* StringExtensionTests.swift */; };
+		046EF9362571391500A4AE7F /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EF9352571391500A4AE7F /* test.swift */; };
+		048AF0E6257D3BD30082605A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048AF0E5257D3BD30082605A /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		044121982496ADA600C09035 /* InfoTileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTileView.xib; sourceTree = "<group>"; };
 		0441219A2496ADC700C09035 /* InfoTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTileView.swift; sourceTree = "<group>"; };
 		0441219C2496D28200C09035 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		046EF9352571391500A4AE7F /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		048AF0E5257D3BD30082605A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +207,7 @@
 				0433D27E24952EE4005E2A9C /* SearchViewController.swift */,
 				0433D283249539B2005E2A9C /* SearchLocationPresenter.swift */,
 				0433D29524961309005E2A9C /* WeatherForcastPresenter.swift */,
+				048AF0E5257D3BD30082605A /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			children = (
 				0433D281249530FE005E2A9C /* UIViewExtension.swift */,
 				0433D28A24955EB9005E2A9C /* WeatherApiModelExtension.swift */,
+				046EF9352571391500A4AE7F /* test.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -370,7 +376,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = nrk;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					0433D23524941621005E2A9C = {
 						CreatedOnToolsVersion = 11.3;
@@ -465,10 +471,12 @@
 				0433D28924954818005E2A9C /* PlaceViewModel.swift in Sources */,
 				0441219B2496ADC700C09035 /* InfoTileView.swift in Sources */,
 				0433D29224958721005E2A9C /* PlacesTableViewCell.swift in Sources */,
+				046EF9362571391500A4AE7F /* test.swift in Sources */,
 				0441219724967FDF00C09035 /* ForcastHeaderTableViewCell.swift in Sources */,
 				0433D23C24941621005E2A9C /* SceneDelegate.swift in Sources */,
 				0433D282249530FE005E2A9C /* UIViewExtension.swift in Sources */,
 				0433D27D24951144005E2A9C /* JsonUtil.swift in Sources */,
+				048AF0E6257D3BD30082605A /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

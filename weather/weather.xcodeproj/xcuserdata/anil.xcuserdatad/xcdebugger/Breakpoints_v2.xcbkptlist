@@ -84,7 +84,7 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "9493C8C7-183E-4071-B508-91E565D6406E - aa887e23de5d81ce"
+                  uuid = "9493C8C7-183E-4071-B508-91E565D6406E - 7209564002a8b00a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -99,7 +99,7 @@
                   offsetFromSymbolStart = "405">
                </Location>
                <Location
-                  uuid = "9493C8C7-183E-4071-B508-91E565D6406E - aa887e23de5d81ce"
+                  uuid = "9493C8C7-183E-4071-B508-91E565D6406E - 7209564002a8b00a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -199,7 +199,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1D4EEF8F-A464-4777-A966-A908246CC7D5 - aabcd418c395bd1c"
+                  uuid = "1D4EEF8F-A464-4777-A966-A908246CC7D5 - 723dfc7b1f63760b"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -214,7 +214,7 @@
                   offsetFromSymbolStart = "1364">
                </Location>
                <Location
-                  uuid = "1D4EEF8F-A464-4777-A966-A908246CC7D5 - b3bcd297d822097"
+                  uuid = "1D4EEF8F-A464-4777-A966-A908246CC7D5 - d3bae54aa174eb80"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -311,7 +311,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EC916E70-606B-43CD-9093-444A7291A3D1 - dd66f89c4cc24bb7"
+                  uuid = "EC916E70-606B-43CD-9093-444A7291A3D1 - da1cd358d0fb699b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -323,10 +323,10 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
                   endingLineNumber = "36"
-                  offsetFromSymbolStart = "176">
+                  offsetFromSymbolStart = "316">
                </Location>
                <Location
-                  uuid = "EC916E70-606B-43CD-9093-444A7291A3D1 - 2a2597c88cff81f1"
+                  uuid = "EC916E70-606B-43CD-9093-444A7291A3D1 - 2d5fbc0c10c6a3bc"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -336,9 +336,9 @@
                   urlString = "file:///Volumes/WorkSpace/NRK/WeatherApp/weather/weather/Controllers/WeatherForcastPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "83">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -372,6 +372,86 @@
             startingLineNumber = "131"
             endingLineNumber = "131"
             landmarkName = "onForcastDataFetchDidSucceed(forcastData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "105E1139-58F5-4A00-A72A-7D516E3A8FCC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weather/Models/ApiModels/SearchLocationResponse.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "Position"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB807798-70B4-4418-A504-4BDC03CEA47A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weather/Controllers/MapViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "plotPointOnMap()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DB807798-70B4-4418-A504-4BDC03CEA47A - 97b23f39aaca3c8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "weather.MapViewController.plotPointOnMap() -&gt; ()"
+                  moduleName = "weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/WorkSpace/NRK/WeatherApp/weather/weather/Controllers/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "556">
+               </Location>
+               <Location
+                  uuid = "DB807798-70B4-4418-A504-4BDC03CEA47A - 514be56321f47164"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (weather.MapPin) -&gt; () in weather.MapViewController.plotPointOnMap() -&gt; ()"
+                  moduleName = "weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/WorkSpace/NRK/WeatherApp/weather/weather/Controllers/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42C9144F-031B-4D21-A081-D695795D73ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weather/Controllers/MapViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "plotPointOnMap()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
